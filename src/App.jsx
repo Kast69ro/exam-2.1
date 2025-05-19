@@ -128,14 +128,12 @@ const App = () => {
     }
   };
 
-  // Фильтрация данных по имени
   const filteredData = data.filter((e) =>
     e.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <div className="max-w-[1900px] m-auto relative p-5">
-      {/* Добавление нового пользователя */}
       <Dialog>
         <DialogTrigger className="bg-blue-600 py-1.5 px-2 text-white font-bold rounded-[5px] w-[70px]">
           + NEW
@@ -188,7 +186,6 @@ const App = () => {
                   type="submit"
                   className="font-bold text-[20px] bg-blue-600 text-white py-2 rounded"
                 >
-                  Save
                 </button>
               </form>
             </DialogDescription>
@@ -196,7 +193,6 @@ const App = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Поиск */}
       <input
         type="text"
         className="border-1 mx-5 py-1 px-2 md:w-[300px]"
@@ -208,10 +204,8 @@ const App = () => {
         onClick={toggleTheme}
         className="bg-blue-600 py-1.5 px-2 text-white font-bold rounded-[5px] w-[95px] absolute right-[6px] md:right-[50px]"
       >
-        Dark/Light
       </button>
 
-      {/* Таблица */}
       <Table className="w-full mt-10">
         <TableCaption>User list</TableCaption>
         <TableHeader>
@@ -263,7 +257,6 @@ const App = () => {
                 <Popover>
                   <PopoverTrigger className="cursor-pointer text-[24px]">...</PopoverTrigger>
                   <PopoverContent className="flex flex-col items-start gap-3 p-4">
-                    {/* View Profile */}
                     <Sheet>
                       <SheetTrigger className="text-[17px] font-bold cursor-pointer">
                         View Profile
@@ -288,7 +281,6 @@ const App = () => {
                       </SheetContent>
                     </Sheet>
 
-                    {/* Edit */}
                     <Dialog>
                       <DialogTrigger
                         asChild
@@ -299,18 +291,15 @@ const App = () => {
                         }}
                         className="text-[17px] font-bold cursor-pointer"
                       >
-                        Edit
                       </DialogTrigger>
                    
                     </Dialog>
 
-                    {/* Delete */}
                     <Button
                       variant="outline"
                       className="bg-transparent border-none shadow-none text-red-600 text-[16px] cursor-pointer"
                       onClick={() => handleDelete(user.id)}
                     >
-                      DELETE
                     </Button>
                   </PopoverContent>
                 </Popover>
